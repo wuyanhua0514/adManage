@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet';
 import Link from 'umi/link';
 import React from 'react';
 import { connect } from 'dva';
-import { formatMessage } from 'umi-plugin-react/locale';
-import SelectLang from '@/components/SelectLang';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
 
@@ -25,7 +23,6 @@ const UserLayout = props => {
   const title = getPageTitle({
     pathname: location.pathname,
     breadcrumb,
-    formatMessage,
     ...props,
   });
   return (
@@ -37,7 +34,6 @@ const UserLayout = props => {
 
       <div className={styles.container}>
         <div className={styles.lang}>
-          <SelectLang />
         </div>
         <div className={styles.content}>
           <div className={styles.top}>
